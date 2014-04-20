@@ -1,0 +1,25 @@
+{
+  "name": "HandsDown",
+  "main": "views/index.html",
+  "version": "0.0.1",
+  "single-instance": true,
+  "window": {
+	"icon": "icon",
+    "title": "HandsDown",
+    "toolbar": false,
+    "width": 650,
+    "height": 700,
+    "min_width": 650,
+    "min_height": 650
+  },
+  "chromium-args": "--child-clean-exit",
+  "dependencies": {
+    "jquery": "^2.1.0",
+    "jquery-ui": "^1.10.5",
+    "marked": "^0.3.2",
+    "highlight.js": "^8.0.0",
+    "uuid": "^1.4.1",
+    "escape-html": "^1.0.1",
+    "font-awesome": "^4.0.3"
+  }
+}
