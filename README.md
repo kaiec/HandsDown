@@ -11,10 +11,10 @@ pushing them to Github.
 
 On the other hand, this project demonstrates
 1. **literate programming** with Coffeescript,
-1. **Coffeescript** as a language for Node.js,
-1. **node-webkit** as basis for desktop applications,
-1. Github as **host for literate programs**, and
-1. platform-specific **distribution of node-webkit applications** using Git branches.
+2. **Coffeescript** as a language for Node.js,
+3. **node-webkit** as basis for desktop applications,
+4. Github as **host for literate programs**, and
+5. platform-specific **distribution of node-webkit applications** using Git branches.
 
 
 ### Download
