@@ -14,7 +14,7 @@ marked = require('marked');
 global.$ = $;
 
 $(function() {
-  var f, files, fillTab, holder, interceptLinks, layout, openFile, syncTab, tabs, win, _i, _len;
+  var f, files, fillTab, holder, interceptLinks, layout, openFile, rewriteImageSrc, syncTab, tabs, win, _i, _len;
   tabs = new ui.Tabs(".ui-layout-center");
   tabs.setWelcome("<div class='.welcome' style=' text-align:center; font-size:10pt; color:#CC7A29; margin:40px; padding:80px; border: 2px dashed gray; -webkit-border-radius: 40px; '> <h2>HandsDown</h2> <h1><i class='fa fa-hand-o-down fa-3x'></i></h1> <p style='margin-left:auto;margin-right:auto;width:400px;text-align:left'> Hands down, this is the simplest <b>viewer for Markdown</b> (and other) files you have ever seen. </p> <h2 style=' margin:40px; padding:20px; border: 0px dashed gray; -webkit-border-radius: 20px; background-color:#CC7A29; color:#FFFFFF; '>Drag and drop your files here...</h2> <p style='margin-left:auto;margin-right:auto;width:400px;text-align:left'> ... and they will automatically update whenever you change them in your editor. </p> <p style='margin-left:auto;margin-right:auto;width:400px;text-align:left'> <small><i> &copy; 2014 Kai Eckert, <a href='https://github.com/kaiec/HandsDown' style='color:#CC7A29'> github.com/kaiec/HandsDown </a> </i></small> </p> </div>");
   layout = $('body').layout();
@@ -42,6 +42,15 @@ $(function() {
       }
     });
   };
+  rewriteImageSrc = function(tab) {
+    return $("img").each(function() {
+      var file;
+      file = path.dirname(tab.tabid) + path.sep + $(this).attr("src");
+      if (fs.existsSync(file)) {
+        return $(this).attr("src", file);
+      }
+    });
+  };
   fillTab = function(f, tab) {
     return fs.readFile(f, "utf8", function(err, data) {
       var escape, hljs;
@@ -55,6 +64,7 @@ $(function() {
           }
           tab.setContent(data);
           interceptLinks(tab);
+          rewriteImageSrc(tab);
           return console.log("Added: " + f);
         });
       } else {
