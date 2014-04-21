@@ -10,6 +10,7 @@ pushing them to Github.
 ![Screenshot](meta/screenshot.PNG)
 
 On the other hand, this project demonstrates
+
 1. **literate programming** with Coffeescript,
 2. **Coffeescript** as a language for Node.js,
 3. **node-webkit** as basis for desktop applications,
