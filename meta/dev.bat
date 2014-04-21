@@ -1,0 +1,1 @@
+start "nodewebkit app" for /L %%i in (0) do nodewebkit ..

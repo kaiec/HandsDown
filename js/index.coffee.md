@@ -77,7 +77,12 @@ defined in [ui.coffee.md](ui.coffee.md)
           else
             gui.Shell.openExternal(href)
         )
-      
+
+      rewriteImageSrc = (tab) ->
+        $("img").each(->
+          file = path.dirname(tab.tabid) + path.sep + $(this).attr("src")
+          if fs.existsSync(file) then $(this).attr("src", file)
+        )
 
       fillTab = (f, tab) ->
         fs.readFile(f, "utf8", (err, data) ->
@@ -87,6 +92,7 @@ defined in [ui.coffee.md](ui.coffee.md)
               if (err) then throw err
               tab.setContent(data)
               interceptLinks(tab)
+              rewriteImageSrc(tab)
               console.log("Added: " + f)
             )
           else
