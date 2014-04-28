@@ -20,7 +20,7 @@ On the other hand, this project demonstrates
 
 ### Download
 
-Last in first out: How to distribute a node-webkit application using Github. Of course you can just clone this project using git, using the clone URL on the right hand side. If you have [node-webkit installed](https://github.com/rogerwang/node-webkit), simply run it by the command "nodewebkit FOLDER" where FOLDER is the folder of this README. 
+Last in first out: How to distribute a node-webkit application using Github. Of course you can just clone this project using git, using the clone URL on the right hand side. If you have [node-webkit installed](https://github.com/rogerwang/node-webkit), simply run HandsDown by the command "nodewebkit FOLDER" where FOLDER is the folder of this README. 
 
 If you want to have node-webkit packaged together with HandsDown, you can checkout the distribution branch matching your environment. Currently, there are [dist-win](https://github.com/kaiec/HandsDown/tree/dist-win), [dist-linux32](https://github.com/kaiec/HandsDown/tree/dist-linux32), and [dist-linux64](https://github.com/kaiec/HandsDown/tree/dist-linux64).
 
@@ -31,6 +31,9 @@ If you just want to download HandsDown with node-webkit packaged, use the follow
 - Linux 64 bit: [Download ZIP](https://github.com/kaiec/HandsDown/archive/dist-linux64.zip)
 
 Simply unpack HandsDown to a folder of your choice and run HandsDown.exe, HandsDown, or HandsDown64, respectively.
+
+### Literate Programming
+
 
 ### License
 
